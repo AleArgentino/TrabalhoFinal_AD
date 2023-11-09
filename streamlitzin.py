@@ -1,20 +1,11 @@
-# myFirstStreamlitApp.py
-  
-#import the library
+#Libraries
 import streamlit as st
+import pandas as pd
+import urllib3
+from urllib3 import request
+from io import BytesIO
+import requests
+import matplotlib.pyplot as plt
+import numpy as np
 
-# Use st.title("") para adicionar um TÍTULO ao seu Web app
-st.title("Alexandre Argentino")
-
-# Use st.header("") para adicionar um CABEÇALHO ao seu Web app
-st.header("Teste de Cabeçalho")
-
-# Use st.subheader("") para adicionar um SUB CABEÇALHO ao seu Web app
-st.subheader("Teste de WebApp!")
-
-# Use st.write("") para adicionar um texto ao seu Web app
-st.write("Como já deve ter percebido, o método st.write() é usado para escrita de texto e informações gerais!")
-
-st.info("Como já deve ter percebido, o método st.write() é usado para escrita de texto e informações gerais!")
-
-st.warning("Como já deve ter percebido, o método st.write() é usado para escrita de texto e informações gerais!")
+st.title("Trabalho Fina de Análise de Dados")
