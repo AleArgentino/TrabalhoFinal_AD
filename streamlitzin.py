@@ -6,7 +6,7 @@ import urllib3
 from urllib3 import request
 from io import BytesIO
 import requests
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 #Títulos
