@@ -9,6 +9,8 @@ import requests
 import numpy as np
 
 st.title("Trabalho Final de Análise de Dados")
+st.header("Desenvolvido por Alexandre M. Argentino e Nicholas C. Tonhi")
+st.subheader("Prof. Massaki Igarashi")
 
 #Gráfico Base
 http = urllib3.PoolManager()
