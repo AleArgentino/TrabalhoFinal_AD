@@ -6,6 +6,7 @@ import urllib3
 from urllib3 import request
 from io import BytesIO
 import requests
+
 #Títulos
 
 st.title("Trabalho Final de Análise de Dados")
