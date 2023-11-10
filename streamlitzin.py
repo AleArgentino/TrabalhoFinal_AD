@@ -46,5 +46,5 @@ dfAno
 
 x = st.selectbox("Gostou dessa inovação?",["Não", "Sim"])
 
-if x = "Sim":
+if x == "Sim":
   st.balloons()
