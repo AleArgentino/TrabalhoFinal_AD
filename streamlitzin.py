@@ -8,7 +8,7 @@ import requests
 #import matplotlib.pyplot as plt
 import numpy as np
 
-st.title("Trabalho Fina de Análise de Dados")
+st.title("Trabalho Final de Análise de Dados")
 
 #Gráfico Base
 http = urllib3.PoolManager()
@@ -18,6 +18,6 @@ df = pd.read_csv(BytesIO(dataD))
 df
 
 #Gráfico de um ano específico
-ano_escolhido = df['Ano'] == int(input("Insira o ano que deseja se aprofundar (1990 - 2021): "))
+ano_escolhido = df['Ano'] == st.slider("Escolha um ano que deseja se aprofundar:", 1990, 2021)
 dfAno = df[ano_escolhido]
 dfAno
