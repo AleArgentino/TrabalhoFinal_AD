@@ -1,3 +1,5 @@
+pip install matplotlib
+
 #Libraries
 import streamlit as st
 import pandas as pd
