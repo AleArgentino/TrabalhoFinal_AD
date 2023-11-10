@@ -13,8 +13,9 @@ st.header("Desenvolvido por Alexandre M. Argentino e Nicholas C. Tonhi")
 st.subheader("Prof. Massaki Igarashi")
 
 #Gráfico Base
-st.write("Tabela Geral:")
 st.write("")
+st.write("Tabela Geral:")
+
 http = urllib3.PoolManager()
 rD = requests.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSdXh5LgfEPrWYfXBlR-qNK25CmO-VgIHO1h_CEjChC1eMHl5z5ds3UPjIo5TNb34EQIFrK-bUICDev/pub?gid=0&single=true&output=csv')
 dataD = rD.content
