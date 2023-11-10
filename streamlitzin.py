@@ -41,3 +41,10 @@ st.write("Tabela de Ano:")
 ano_escolhido = df['Ano'] == int(st.slider("Escolha um ano que deseja se aprofundar:", 1990, 2021))
 dfAno = df[ano_escolhido]
 dfAno
+
+#Gracinha
+
+x = st.selectbox("Gostou dessa inovação?",["Não", "Sim"])
+
+if x == "Sim"
+  st.balloons()
