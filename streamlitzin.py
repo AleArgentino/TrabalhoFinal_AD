@@ -23,11 +23,15 @@ df = pd.read_csv(BytesIO(dataD))
 df
 
 #Gráfico de uma lavoura específico
+st.write("")
+st.write("Tabela de Lavoura:")
 lav_escolhida = df['Nome Lavoura'] == st.selectbox("Escolha um produto",["Guaraná", "Cana-de-açucar", "Soja", "Café", "Goiaba"])
 dfLav = df[lav_escolhida]
 dfLav
 
 #Gráfico de um ano específico
+st.write("")
+st.write("Tabela de Ano:")
 ano_escolhido = df['Ano'] == int(st.slider("Escolha um ano que deseja se aprofundar:", 1990, 2021))
 dfAno = df[ano_escolhido]
 dfAno
