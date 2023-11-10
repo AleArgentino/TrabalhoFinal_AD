@@ -16,3 +16,8 @@ rD = requests.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSdXh5LgfEPrW
 dataD = rD.content
 df = pd.read_csv(BytesIO(dataD))
 df
+
+#Gráfico de um ano específico
+ano_escolhido = df['Ano'] == int(input("Insira o ano que deseja se aprofundar (1990 - 2021): "))
+dfAno = df[ano_escolhido]
+dfAno
