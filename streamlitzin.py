@@ -6,6 +6,8 @@ import urllib3
 from urllib3 import request
 from io import BytesIO
 import requests
+#import matplotlib.pyplot as plt
+#import numpy as np
 
 #Títulos
 
@@ -41,8 +43,3 @@ st.write("Tabela de Ano:")
 ano_escolhido = df['Ano'] == int(st.slider("Escolha um ano que deseja se aprofundar:", 1990, 2021))
 dfAno = df[ano_escolhido]
 dfAno
-
-#Gráficos
-
-import matplotlib.pyplot as plt
-import numpy as np
