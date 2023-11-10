@@ -1,18 +1,20 @@
 #Libraries
+
 import streamlit as st
 import pandas as pd
 import urllib3
 from urllib3 import request
 from io import BytesIO
 import requests
-#import matplotlib.pyplot as plt
-import numpy as np
+
+#Títulos
 
 st.title("Trabalho Final de Análise de Dados")
 st.header("Desenvolvido por Alexandre M. Argentino e Nicholas C. Tonhi")
 st.subheader("Prof. Massaki Igarashi")
 
-#Gráfico Base
+#Tabela Geral
+
 st.write("")
 st.write("Tabela Geral:")
 
@@ -22,16 +24,25 @@ dataD = rD.content
 df = pd.read_csv(BytesIO(dataD))
 df
 
-#Gráfico de uma lavoura específico
+#Tabela de uma lavoura específica
+
 st.write("")
 st.write("Tabela de Lavoura:")
+
 lav_escolhida = df['Nome Lavoura'] == st.selectbox("Escolha um produto",["Guaraná", "Cana-de-açucar", "Soja", "Café", "Goiaba"])
 dfLav = df[lav_escolhida]
 dfLav
 
-#Gráfico de um ano específico
+#Tabela de um ano específico
+
 st.write("")
 st.write("Tabela de Ano:")
+
 ano_escolhido = df['Ano'] == int(st.slider("Escolha um ano que deseja se aprofundar:", 1990, 2021))
 dfAno = df[ano_escolhido]
 dfAno
+
+#Gráficos
+
+import matplotlib.pyplot as plt
+import numpy as np
