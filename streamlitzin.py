@@ -18,6 +18,6 @@ df = pd.read_csv(BytesIO(dataD))
 df
 
 #Gráfico de um ano específico
-ano_escolhido = df['Ano'] == st.slider("Escolha um ano que deseja se aprofundar:", 1990, 2021)
+ano_escolhido = df['Ano'] == int(st.slider("Escolha um ano que deseja se aprofundar:", 1990, 2021))
 dfAno = df[ano_escolhido]
 dfAno
