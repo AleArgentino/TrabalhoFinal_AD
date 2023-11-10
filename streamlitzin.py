@@ -23,7 +23,7 @@ df = pd.read_csv(BytesIO(dataD))
 df
 
 #Gráfico de uma lavoura específico
-lav_escolhida = df[Nome Lavoura] == st.selectbox("Escolha um produto",["Guaraná", "Cana-de-açucar", "Soja", "café", "Goiaba"])
+lav_escolhida = df['Nome Lavoura'] == st.selectbox("Escolha um produto",["Guaraná", "Cana-de-açucar", "Soja", "café", "Goiaba"])
 dfLav = df[lav_escolhida]
 dfLav
 
