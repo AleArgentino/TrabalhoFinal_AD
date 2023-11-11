@@ -94,7 +94,7 @@ st.write("A área total utilizada no ano escolhido: " + str(Atotal) + " milhares
 st.write()
 
 plt.show()
-st.pyplot()
+st.pyplot(fig)
 
 #Gracinha
 
