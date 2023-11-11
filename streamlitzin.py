@@ -48,6 +48,8 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 
+echo "backend: TkAgg" >> ~/.matplotlib/matplotlibrc
+
 #Info's Graf
 
 sele_G = dfAno['Nome Lavoura']=="Guaraná"
