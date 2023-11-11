@@ -42,6 +42,60 @@ ano_escolhido = df['Ano'] == int(st.slider("Escolha um ano que deseja se aprofun
 dfAno = df[ano_escolhido]
 dfAno
 
+#Gráficos
+
+import streamlit as st
+import matplotlib.pyplot as plt
+import numpy as np
+
+#Info's Graf
+
+sele_G = dfAno['Nome Lavoura']=="Guaraná"
+dfG = dfAno[sele_G]
+
+sele_C = dfAno['Nome Lavoura']=="Cana-de-açucar"
+dfC = dfAno[sele_C]
+
+sele_S = dfAno['Nome Lavoura']=="Soja"
+dfS = dfAno[sele_S]
+
+sele_Ce = dfAno['Nome Lavoura']=="Café"
+dfCe = dfAno[sele_Ce]
+
+sele_Go = dfAno['Nome Lavoura']=="Goiaba"
+dfGo = dfAno[sele_Go]
+
+#Gráfico de Área
+
+fig, ax = plt.subplots(figsize=(6, 3), subplot_kw=dict(aspect="equal"))
+
+labels = 'Cana-de-Açucar', 'Guaraná', 'Soja', 'Café', 'Goiaba'
+data = [float(dfC['Área Colhida (em milhares de hectares)']), float(dfG['Área Colhida (em milhares de hectares)']), float(dfS['Área Colhida (em milhares de hectares)']), float(dfCe['Área Colhida (em milhares de hectares)']), float(dfGo['Área Colhida (em milhares de hectares)'])]
+explode = (0.1, 0.1, 0.1, 0.1, 0.1)
+
+def func(pct, allvals):
+    absolute = int(np.round(pct/100.*np.sum(allvals)))
+    return f"{pct:.1f}%\n({absolute:d} ha*10³)"
+
+wedges, texts, autotexts = ax.pie(data, explode = explode, autopct=lambda pct: func(pct, data),
+                                  textprops=dict(color="black"))
+
+ax.legend(wedges, labels,
+          title="Produtos",
+          loc="center left",
+          bbox_to_anchor=(1, 0, 0.5, 1))
+
+plt.setp(autotexts, size=8, weight="bold")
+
+ax.set_title("Percentual de Área Colhida")
+
+Atotal = float(dfG['Área Colhida (em milhares de hectares)']) + float(dfC['Área Colhida (em milhares de hectares)']) + float(dfS['Área Colhida (em milhares de hectares)']) + float(dfCe['Área Colhida (em milhares de hectares)']) + float(dfGo['Área Colhida (em milhares de hectares)'])
+
+st.write("A área total utilizada no ano escolhido: " + str(Atotal) + " milhares de hectares.")
+st.write()
+
+st.pyplot()
+
 #Gracinha
 
 x = st.selectbox("Gostou dessa inovação?",["Não", "Sim"])
