@@ -96,6 +96,7 @@ Atotal = float(dfG['Área Colhida (em milhares de hectares)']) + float(dfC['Áre
 st.write("A área total utilizada no ano escolhido: " + str(Atotal) + " milhares de hectares.")
 st.write()
 
+plt.show()
 st.pyplot()
 
 #Gracinha
